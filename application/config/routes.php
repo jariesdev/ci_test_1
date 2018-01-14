@@ -55,6 +55,7 @@ $route['news/add-news'] = 'news/add_news';
 $route['news'] = 'news/index';
 $route['news/(:any)'] = 'news/view/$1';
 $route['news/(:any)/edit'] = 'news/edit/$1';
+$route['news/(:any)/delete'] = 'news/delete/$1';
 $route['(:any)'] = 'pages/view/$1';
 
 $route['404_override'] = '';

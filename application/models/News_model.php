@@ -17,11 +17,18 @@ class News_model extends CI_Model {
 	}
 
 	function insert($data){
-		$this->db->insert('news', $data);
+		return $this->db->insert('news', $data);
 	}
 
 	function update($data){
-		$this->db->update('news', $data);
+		return $this->db->update('news', $data, ['slug' => $data['slug'] ]);
+	}
+
+	function delete($slug){
+		if(!$slug){
+			return false;
+		}
+		return $this->db->delete('news', ['slug' => $slug]);
 	}
 
 }

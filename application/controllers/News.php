@@ -62,4 +62,20 @@ class News extends CI_Controller {
 		$this->load->view('news/add-news', $data);
 		$this->load->view('templates/footer', $data);
 	}
+
+	function delete($slug = NULL){
+		$data['news_item'] = $this->news_model->get_news($slug);
+		if($data['news_item']){
+			$this->news_model->delete($slug);
+			$data['delete_result'] = true;
+		}else{
+			$data['news_item'] = false;
+		}
+
+		$data['title'] = 'Delete News';
+
+		$this->load->view('templates/header', $data);
+		$this->load->view('news/delete', $data);
+		$this->load->view('templates/footer', $data);
+	}
 }

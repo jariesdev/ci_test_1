@@ -17,7 +17,11 @@
 					<?php foreach ($news as $n): ?>
 						<tr>
 							<td><?= $n['title'] ?></td>							
-							<td><a href="<?= site_url('news/'.$n['slug']) ?>">View</a> <a href="<?= site_url('news/'.$n['slug'].'/edit') ?>">Edit</a></td>							
+							<td>
+								<a href="<?= site_url('news/'.$n['slug']) ?>">View</a>
+								<a href="<?= site_url('news/'.$n['slug'].'/edit') ?>">Edit</a>
+								<a href="<?= site_url('news/'.$n['slug'].'/delete') ?>">Delete</a>
+							</td>							
 						</tr>
 					<?php endforeach ?>
 				<?php else: ?>
